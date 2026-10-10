@@ -1,0 +1,17 @@
+edge,weight
+S-A,2
+S-B,4
+A-C,2
+A-D,5
+B-C,1
+B-D,2
+C-G,5
+D-G,2
+
+node,h
+S,7
+A,6
+B,4
+C,5
+D,2
+G,0

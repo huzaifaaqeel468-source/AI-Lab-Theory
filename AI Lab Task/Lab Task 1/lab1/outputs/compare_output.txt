@@ -1,0 +1,18 @@
+LAB 1 - CONVERSATIONAL TEST COMPARISON
+
+Scholarship input:
+  score=70
+  documents_complete=True
+  attendance=80%
+  recommendation=2/5
+
+Conversational-style response:
+  You appear to meet the main academic requirements, so you should qualify for the scholarship.
+
+Transparent rule-based result:
+  FAIL: recommendation 2/5 < 3/5
+
+Observation:
+  The conversational response is fluent and plausible, but it misses
+  the recommendation requirement. Fluent language therefore does not
+  by itself prove reliable reasoning or general intelligence.

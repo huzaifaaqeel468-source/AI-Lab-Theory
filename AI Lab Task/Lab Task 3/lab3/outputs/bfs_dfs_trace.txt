@@ -1,0 +1,20 @@
+BFS/DFS TRACE
+
+BFS
+frontier=['A'] | processed=A | path=A
+frontier=['B', 'C'] | processed=B | path=A->B
+frontier=['C', 'D', 'E'] | processed=C | path=A->C
+frontier=['D', 'E', 'F'] | processed=D | path=A->B->D
+frontier=['E', 'F', 'G'] | processed=E | path=A->B->E
+frontier=['F', 'G'] | processed=F | path=A->C->F
+frontier=['G'] | processed=G | path=A->B->D->G
+final path=A->B->D->G
+visit order=A -> B -> C -> D -> E -> F -> G
+
+DFS
+stack=['A'] | processed=A | path=A
+stack=['C', 'B'] | processed=B | path=A->B
+stack=['C', 'E', 'D'] | processed=D | path=A->B->D
+stack=['C', 'E', 'G'] | processed=G | path=A->B->D->G
+final path=A->B->D->G
+visit order=A -> B -> D -> G

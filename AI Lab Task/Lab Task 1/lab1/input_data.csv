@@ -1,0 +1,5 @@
+case_id,case_name,score,documents_complete,attendance,recommendation,expected
+1,Pass,85,True,90,4,PASS
+2,Attendance failure,85,True,79,4,FAIL
+3,Recommendation failure,85,True,90,2,FAIL
+4,Threshold boundary,70,True,80,3,PASS

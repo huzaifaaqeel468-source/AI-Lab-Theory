@@ -1,0 +1,23 @@
+LAB 2 - STATEFUL CONTROL CHECK
+Thresholds: HEAT below 18C; COOL above 24C; occupancy=0 has priority -> OFF
+
+Environment classifications:
+  Delivery robot: partially observable in the real environment ; stochastic in the real environment
+  Student-support agent: partially observable in the real environment ; stochastic in the real environment
+  Simulator qualification: fully observable if the simulator exposes the complete state and deterministic if transition rules contain no random/noise component
+
+Complete mode-transition trace:
+Step | Previous | Percept | Target | Command | Purpose
+--------------------------------------------------------------------------------------
+   1 |     None | temperature=20C, occupancy=1       | OFF    | SEND       | repeated percept / initial
+   2 |      OFF | temperature=20C, occupancy=1       | OFF    | NO-COMMAND | repeated percept / duplicate
+   3 |      OFF | temperature=18C, occupancy=1       | OFF    | NO-COMMAND | exact lower temperature boundary
+   4 |      OFF | temperature=24C, occupancy=1       | OFF    | NO-COMMAND | exact upper temperature boundary
+   5 |      OFF | temperature=17C, occupancy=1       | HEAT   | SEND       | transition to HEAT
+   6 |     HEAT | temperature=25C, occupancy=1       | COOL   | SEND       | transition to COOL
+   7 |     COOL | temperature=25C, occupancy=0       | OFF    | SEND       | empty room / occupancy priority
+
+Check: repeated identical percepts suppress duplicate commands.
+Check: exact 18C and 24C boundaries produce OFF under strict < and > rules.
+Check: temperature mode transitions produce a new command.
+Check: empty room forces OFF regardless of temperature.

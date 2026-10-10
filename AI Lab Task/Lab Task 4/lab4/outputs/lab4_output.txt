@@ -1,0 +1,20 @@
+LAB 4 OUTPUT
+
+FIRST THREE A* EXPANSIONS
+1. selected=S, g=0, h=7, f=7, path=S
+   frontier=[('A', 2, 1, ['S', 'A']), ('B', 4, 2, ['S', 'B'])]
+2. selected=A, g=2, h=6, f=8, path=S->A
+   frontier=[('B', 4, 2, ['S', 'B']), ('C', 4, 3, ['S', 'A', 'C']), ('D', 7, 4, ['S', 'A', 'D'])]
+3. selected=B, g=4, h=4, f=8, path=S->B
+   frontier=[('C', 4, 3, ['S', 'A', 'C']), ('D', 6, 5, ['S', 'B', 'D']), ('D', 7, 4, ['S', 'A', 'D'])]
+
+A* VS UCS
+A*: path=S->B->D->G, cost=8, independent_cost=8, expanded=['S', 'A', 'B', 'D'], expansion_count=4
+processed=[('S', 0, 7, 7), ('A', 2, 6, 8), ('B', 4, 4, 8), ('D', 6, 2, 8), ('G', 8, 0, 8)]
+UCS: path=S->B->D->G, cost=8, independent_cost=8, expanded=['S', 'A', 'B', 'C', 'D'], expansion_count=5
+processed=[('S', 0, 0, 0), ('A', 2, 0, 2), ('B', 4, 0, 4), ('C', 4, 0, 4), ('D', 6, 0, 6), ('G', 8, 0, 8)]
+
+OVERESTIMATE h(C): 5 -> 10
+Original A*: path=S->B->D->G, cost=8, independent_cost=8, expanded=['S', 'A', 'B', 'D'], expansion_count=4
+Modified A*: path=S->B->D->G, cost=8, independent_cost=8, expanded=['S', 'A', 'B', 'D'], expansion_count=4
+True remaining costs={'S': 8, 'A': 7, 'B': 4, 'C': 5, 'D': 2, 'G': 0}

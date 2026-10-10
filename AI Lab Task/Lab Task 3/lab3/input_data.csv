@@ -1,0 +1,10 @@
+section,case,limit_or_depth,input,expected
+DLS,DLS-1,1,A->G,CUTOFF
+DLS,DLS-2,2,A->G,CUTOFF
+DLS,DLS-3,3,A->G,FOUND
+DLS,DLS-4,4,A->G,FOUND
+IDDFS,IDDFS-1,1,A->G,CUTOFF
+IDDFS,IDDFS-2,2,A->G,CUTOFF
+IDDFS,IDDFS-3,3,A->G,FOUND
+IDDFS,IDDFS-4,4,A->G,FOUND
+UCS,UCS-1,,A->G,minimum-cost path

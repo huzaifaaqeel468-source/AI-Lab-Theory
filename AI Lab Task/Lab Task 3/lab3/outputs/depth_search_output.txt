@@ -1,0 +1,11 @@
+DLS RESULTS
+limit=1 | status=CUTOFF | path=None | processed=['A', 'B', 'C']
+limit=2 | status=CUTOFF | path=None | processed=['A', 'B', 'D', 'E', 'C', 'F']
+limit=3 | status=FOUND | path=['A', 'B', 'D', 'G'] | processed=['A', 'B', 'D', 'G']
+limit=4 | status=FOUND | path=['A', 'B', 'D', 'G'] | processed=['A', 'B', 'D', 'G']
+
+IDDFS RESULTS
+max_depth=1 | status=CUTOFF | path=None | limits_attempted=[0, 1]
+max_depth=2 | status=CUTOFF | path=None | limits_attempted=[0, 1, 2]
+max_depth=3 | status=FOUND | path=['A', 'B', 'D', 'G'] | limits_attempted=[0, 1, 2, 3]
+max_depth=4 | status=FOUND | path=['A', 'B', 'D', 'G'] | limits_attempted=[0, 1, 2, 3]

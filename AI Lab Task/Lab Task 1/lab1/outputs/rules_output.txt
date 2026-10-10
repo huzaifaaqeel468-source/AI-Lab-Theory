@@ -1,0 +1,37 @@
+LAB 1 - RULE-BASED SCHOLARSHIP TEST
+Assumption: all thresholds are synthetic lab assumptions.
+Rules: score >= 70 AND documents complete AND attendance >= 80% AND recommendation >= 3/5
+
+Case 1 - Pass
+  Input:    score=85, documents_complete=True, attendance=90%, recommendation=4/5
+  Expected: PASS
+  Actual:   PASS
+  Reason:   all four conditions satisfied
+  Check:    OK
+
+Case 2 - Attendance failure
+  Input:    score=85, documents_complete=True, attendance=79%, recommendation=4/5
+  Expected: FAIL
+  Actual:   FAIL
+  Reason:   attendance 79% < 80%
+  Check:    OK
+
+Case 3 - Recommendation failure
+  Input:    score=85, documents_complete=True, attendance=90%, recommendation=2/5
+  Expected: FAIL
+  Actual:   FAIL
+  Reason:   recommendation 2/5 < 3/5
+  Check:    OK
+
+Case 4 - Threshold boundary
+  Input:    score=70, documents_complete=True, attendance=80%, recommendation=3/5
+  Expected: PASS
+  Actual:   PASS
+  Reason:   all four conditions satisfied
+  Check:    OK
+
+Selection rationale:
+  Case 1 is a positive control (normal pass).
+  Case 2 isolates the new attendance condition.
+  Case 3 isolates the new recommendation condition.
+  Case 4 checks inclusive >= behavior exactly at all thresholds.
